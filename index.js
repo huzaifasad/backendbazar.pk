@@ -13,6 +13,14 @@ app.use('/user',userrouter);
 app.use('/',(req,res)=>{
   res.send('thiis response') 
 })
+app.use(cors(
+    {
+        origin:["https://midwork-frontend.vercel.app"],
+        methods:["POST","GET"],
+        credentials:true
+    }
+
+));
 app.listen(1000, () => {
   console.log('Server is running on port 1000');
 });
