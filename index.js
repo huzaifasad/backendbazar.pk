@@ -15,7 +15,7 @@ app.use('/',(req,res)=>{
 })
 app.use(cors(
     {
-        origin:["https://midwork-frontend.vercel.app"],
+        origin:["https://backendbazar-pk.vercel.app"],
         methods:["POST","GET"],
         credentials:true
     }
