@@ -1,10 +1,15 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-require('./schemas/config');
+
 
 app.use(express.json());
 app.use(cors());
+
+const url = 'mongodb+srv://huzaifa084567:12345@cluster0.wpihnwn.mongodb.net/';
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
+.then(() => console.log('connected to the database'))
+.catch(()=> console.log('not conncted'));
 
 const laptoprouter = require('./schemas/productrouter/laptop');
 const userrouter=require('./schemas/productrouter/user')
